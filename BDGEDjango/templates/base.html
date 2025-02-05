@@ -1,0 +1,34 @@
+{% load static %)
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkR/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1Q40zDgt8jO0Xb6t7w3mgPxhU9SX5zD5p+L6e6L6T2KdY6U6a6K"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8j0t6vLEHfe/JQGiRRSQQx6z6T2KdY6U6a6K"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4c53b33752.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/myjs.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>{% block title_block %}{% endblock %}</title>
+</head>
+
+<body style="background-color: #E0EBEB;">
+    {% include 'navbar.html' %}
+    <div class="container">
+        {% block body_block %}{% endblock %}
+    </div>
+</body>
+
+</html>

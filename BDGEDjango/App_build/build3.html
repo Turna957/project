@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title_block %}
+Build3
+{% endblock %}
+
+{% block body_block %}
+<div class="container my-4">
+    <h3 style="text-align: center;">Result</h3>
+    <div class="row">
+        <div class="col-8 p-4" style="margin: 8px auto; background-color:#C2DED6; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+            <h4>Model name: {{model}}</h4>
+            <h5>Precision: {{precision}}</h5>
+            <h5>Recall: {{recall}}</h5>
+            <h5>F1score: {{f1score}}</h5>
+            <h5>Accuracy: {{accuracy}}</h5>
+        </div>
+    </div>
+</div>
+{% endblock %}

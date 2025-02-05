@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title_block %}
+    Build1
+{% endblock %}
+
+{% block body_block %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-8 my-3">
+            <h3>Upload a csv file.</h3>
+            <hr>
+            <form method="POST" enctype="multipart/form-data" action="{% url 'build1' %}">
+                {% csrf_token %}
+                <fieldset>
+                    {{ form|crispy }}
+                    <input type="submit" value="upload" class="btn btn-primary">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

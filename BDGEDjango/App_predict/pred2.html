@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title_block %}
+Result
+{% endblock %}
+
+{% block body_block %}
+<div class="container my-4" style="text-align: center;">
+    <h3>Result</h3>
+    <div class="row">
+        <div class="col-8 p-4" style="margin: 8px auto; background-color:#C2DED6; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+            {{ result }}
+        </div>
+    </div>
+</div>
+{% endblock %}

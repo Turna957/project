@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title_block %}
+Iris Prediction
+{% endblock %}
+
+{% block body_block %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-8">
+            <h1>Enter Iris Features to Predict the Variety</h1>
+            <div class="pred_frm_css">
+                <form action="{% url 'pred2' %}" method="post">
+                    {% csrf_token %}
+                    <fieldset>
+                        <div class="form-group my-3">
+                            <label for="sepal Length">Sepal Length (cm):</label><br>
+                            <input type="number" class="form-control w-75" name="sepal_length" placeholder="e.g., 3.5" step="any" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="sepal width">Sepal Width (cm):</label><br>
+                            <input type="number" class="form-control w-75" name="sepal_width" placeholder="e.g., 3.5" step="any" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="petal Length">Petal Length (cm):</label><br>
+                            <input type="number" class="form-control w-75" name="petal_length" placeholder="e.g., 3.5" step="any" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="petal width">Petal Width (cm):</label><br>
+                            <input type="number" class="form-control w-75" name="petal_width" placeholder="e.g., 3.5" step="any" required>
+                        </div>
+                        <div class="form-group my-3">
+    <label for="classifier">Choose a Model:</label><br>
+    <select name="classifier" required class="form-control w-75">
+        {% for buildmodel in buildmodels %}
+        <option value="{{ buildmodel.classifier_model }}">
+            {{ buildmodel.classifier_model }}
+        </option>
+        {% endfor %}
+    </select>
+</div>
+
+<div class="form-group my-3">
+    <input type="submit" value="Get Prediction" class="btn btn-sm" style="background-color: #FF8000; color: white; height: 30px;">
+</div>
